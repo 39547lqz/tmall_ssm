@@ -1,15 +1,12 @@
 package com.lqz.tmall_ssm.service;
 
 import com.lqz.tmall_ssm.pojo.Category;
-import com.lqz.tmall_ssm.util.Page;
 
 import java.util.List;
 
 public interface CategoryService {
 
-    List<Category> list(Page page);
-
-    int total();
+    List<Category> list();
 
     int add(Category category);
 

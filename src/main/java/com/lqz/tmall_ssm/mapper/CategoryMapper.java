@@ -1,23 +1,22 @@
 package com.lqz.tmall_ssm.mapper;
 
-
 import com.lqz.tmall_ssm.pojo.Category;
-import com.lqz.tmall_ssm.util.Page;
+import com.lqz.tmall_ssm.pojo.CategoryExample;
 
 import java.util.List;
 
-
 public interface CategoryMapper {
+    int deleteByPrimaryKey(Integer id);
 
-    List<Category> list(Page page);
+    int insert(Category record);
 
-    int total();
+    int insertSelective(Category record);
 
-    int add(Category category);
+    List<Category> selectByExample(CategoryExample example);
 
-    int delete(int id);
+    Category selectByPrimaryKey(Integer id);
 
-    Category get(int id);
+    int updateByPrimaryKeySelective(Category record);
 
-    int update(Category category);
+    int updateByPrimaryKey(Category record);
 }
