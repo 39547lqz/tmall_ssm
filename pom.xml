@@ -182,6 +182,31 @@
 
   <build>
     <finalName>tmall_ssm</finalName>
+
+      <sourceDirectory>src/main/java</sourceDirectory>
+      <resources>
+          <resource>
+              <directory>src/main/java</directory>
+              <includes>
+                  <include>**/*.hbm.xml</include>
+                  <include>**/*.xml</include>
+              </includes>
+          </resource>
+
+          <resource>
+              <directory>src/main/resources</directory>
+              <includes>
+                  <include>**/*.xml</include>
+                  <include>**/*.properties</include>
+                  <include>**/*.xls</include>
+                  <include>**/*.xsl</include>
+                  <include>**/*.xlsx</include>
+                  <include>**/*.tld</include>
+                  <include>**/*.png</include>
+              </includes>
+          </resource>
+      </resources>
+
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
