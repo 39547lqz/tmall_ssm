@@ -8,9 +8,11 @@ import com.lqz.tmall_ssm.pojo.PropertyValueExample;
 import com.lqz.tmall_ssm.service.PropertyService;
 import com.lqz.tmall_ssm.service.PropertyValueService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class PropertyValueServiceImpl implements PropertyValueService {
 
     @Autowired

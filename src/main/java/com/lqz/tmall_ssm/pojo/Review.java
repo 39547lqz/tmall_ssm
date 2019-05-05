@@ -1,5 +1,8 @@
 package com.lqz.tmall_ssm.pojo;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 
 public class Review {
@@ -12,6 +15,11 @@ public class Review {
     private Integer pid;
 
     private Date createDate;
+
+    /*非数据库字段*/
+    @Setter
+    @Getter
+    private User user;
 
     public Integer getId() {
         return id;

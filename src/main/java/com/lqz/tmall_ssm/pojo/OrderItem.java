@@ -1,5 +1,8 @@
 package com.lqz.tmall_ssm.pojo;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public class OrderItem {
     private Integer id;
 
@@ -10,6 +13,11 @@ public class OrderItem {
     private Integer uid;
 
     private Integer number;
+
+    /*非数据库字段*/
+    @Setter
+    @Getter
+    private Product product;
 
     public Integer getId() {
         return id;

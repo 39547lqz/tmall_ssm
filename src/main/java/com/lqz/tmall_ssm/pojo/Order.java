@@ -1,6 +1,11 @@
 package com.lqz.tmall_ssm.pojo;
 
+import com.lqz.tmall_ssm.service.OrderService;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
+import java.util.List;
 
 public class Order {
     private Integer id;
@@ -28,6 +33,23 @@ public class Order {
     private Integer uid;
 
     private String status;
+
+    /*如下是非数据库字段*/
+    @Getter
+    @Setter
+    private List<OrderItem> orderItems;
+
+    @Setter
+    @Getter
+    private User user;
+
+    @Setter
+    @Getter
+    private float total;
+
+    @Setter
+    @Getter
+    private int totalNumber;
 
     public Integer getId() {
         return id;
@@ -131,5 +153,32 @@ public class Order {
 
     public void setStatus(String status) {
         this.status = status == null ? null : status.trim();
+    }
+
+    public String getStatusDesc(){
+        String desc ="未知";
+        switch(status){
+            case OrderService.waitPay:
+                desc="待付款";
+                break;
+            case OrderService.waitDelivery:
+                desc="待发货";
+                break;
+            case OrderService.waitConfirm:
+                desc="待收货";
+                break;
+            case OrderService.waitReview:
+                desc="等评价";
+                break;
+            case OrderService.finish:
+                desc="完成";
+                break;
+            case OrderService.delete:
+                desc="刪除";
+                break;
+            default:
+                desc="未知";
+        }
+        return desc;
     }
 }

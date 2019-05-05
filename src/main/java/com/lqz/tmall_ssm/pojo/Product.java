@@ -4,7 +4,10 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
+@Setter
+@Getter
 public class Product {
     private Integer id;
 
@@ -23,71 +26,21 @@ public class Product {
     private Date createDate;
 
     /*非数据库字段*/
-    @Setter
-    @Getter
     private Category  category;
 
-    public Integer getId() {
-        return id;
-    }
+    private ProductImage firstProductImage;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    /*单个产品图片集合*/
+    private List<ProductImage> productSingleImages;
 
-    public String getName() {
-        return name;
-    }
+    /*** 详情产品图片集合*/
+    private List<ProductImage> productDetailImages;
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
+    /*销量*/
+    private int saleCount;
 
-    public String getSubTitle() {
-        return subTitle;
-    }
+    /*累计评价*/
+    private int reviewCount;
 
-    public void setSubTitle(String subTitle) {
-        this.subTitle = subTitle == null ? null : subTitle.trim();
-    }
 
-    public Float getOriginalPrice() {
-        return originalPrice;
-    }
-
-    public void setOriginalPrice(Float originalPrice) {
-        this.originalPrice = originalPrice;
-    }
-
-    public Float getPromotePrice() {
-        return promotePrice;
-    }
-
-    public void setPromotePrice(Float promotePrice) {
-        this.promotePrice = promotePrice;
-    }
-
-    public Integer getStock() {
-        return stock;
-    }
-
-    public void setStock(Integer stock) {
-        this.stock = stock;
-    }
-
-    public Integer getCid() {
-        return cid;
-    }
-
-    public void setCid(Integer cid) {
-        this.cid = cid;
-    }
-
-    public Date getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
-    }
 }
